@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbis | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="/app/static/login_style.css">
+</head>
+<body class="min-h-screen bg-gray-900 flex items-center justify-center" style="background-image: url('http://static.photos/travel/1200x630/7'); background-size: cover; background-position: center;">
+    <div class="liquid-bg rounded-xl p-8 w-full max-w-md mx-4">
+        <div class="text-center mb-8">
+            <i data-feather="compass" class="w-12 h-12 mx-auto text-red-400"></i>
+            <h1 class="text-3xl font-bold text-red-100 mt-4">ORBIS</h1>
+            <p class="text-red-200 mt-2">Inexstinguibilis orbitam orbis.</p>
+        </div>
+
+        <form class="space-y-6">
+            {{ form.csrf_token }}
+            <div>
+                {{ form.email.label(class="block text-sm font-medium text-red-100") }}
+                <div class="mt-1 relative">
+                    {{ form.email(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i data-feather="mail" class="h-5 w-5 text-red-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                {{ form.password.label(class="block text-sm font-medium text-red-100") }}
+                <div class="mt-1 relative">
+                    {{ form.password(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                {{ form.submit(class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-200") }}
+            </div>
+        </form>
+
+        <div class="mt-6">
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-red-300 border-opacity-30"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-transparent text-red-200">Or continue with</span>
+                </div>
+            </div>
+
+            <div class="mt-6 grid grid-cols-2 gap-3">
+                <div>
+                    <a href="#" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-gray-800 bg-opacity-50 text-sm font-medium text-red-100 hover:bg-gray-700 liquid-border transition duration-200">
+                        <i data-feather="github" class="h-5 w-5"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-gray-800 bg-opacity-50 text-sm font-medium text-red-100 hover:bg-gray-700 liquid-border transition duration-200">
+                        <i data-feather="twitter" class="h-5 w-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-6 text-center">
+            <p class="text-sm text-red-200">
+                Don't have an account? 
+                <a href="{{ url_for('signin.html') }}" class="font-medium text-red-300 hover:text-red-200">Sign in</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
