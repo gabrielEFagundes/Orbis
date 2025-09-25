@@ -8,7 +8,7 @@ from flask_bcrypt import Bcrypt
 import os
 load_dotenv('.env')
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
@@ -17,5 +17,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 login_manager = LoginManager(app)
-login_manager.login_view = 'homepage'
+login_manager.login_view = 'login'
 bcrypt = Bcrypt(app)
+
+from app import routes, models

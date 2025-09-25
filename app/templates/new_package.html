@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbis | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="/static/login_style.css">
+</head>
+<body class="min-h-screen bg-gray-900 flex items-center justify-center" style="background-image: url('http://static.photos/travel/1200x630/7'); background-size: cover; background-position: center;">
+    <div class="liquid-bg rounded-xl p-8 w-full max-w-md mx-4">
+        <div class="text-center mb-8">
+            <i data-feather="compass" class="w-12 h-12 mx-auto text-red-400"></i>
+            <h1 class="text-3xl font-bold text-red-100 mt-4">New Package</h1>
+            <p class="text-red-200 mt-2">This will be an Amazing Trip!</p>
+        </div>
+
+        <form class="space-y-6" method="POST">
+            <div>
+                {{ form.destiny.label(class="block text-sm font-medium text-red-100") }}
+                <div class="mt-1 relative">
+                    {{ form.destiny(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i data-feather="mail" class="h-5 w-5 text-red-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                {{ form.period.label(class="block text-sm font-medium text-red-100") }}
+                <div class="mt-1 relative">
+                    {{ form.period(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                {{ form.price.label(class="block text-sm font-medium text-red-100") }}
+                <div class="mt-1 relative">
+                    {{ form.price(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                {{ form.category.label(class="block text-sm font-medium text-red-100") }}
+                <div class="mt-1 relative">
+                    {{ form.category(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                {{ form.vacancies.label(class="block text-sm font-medium text-red-100") }}
+                <div class="mt-1 relative">
+                    {{ form.vacancies(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                {{ form.responsable.label(class="block text-sm font-medium text-red-100") }}
+                <div class="mt-1 relative">
+                    {{ form.responsable(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                {{ form.submit(class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-200") }}
+                <br>
+                <a href="{{ url_for('home') }}" class="text-red-100 hover:text-red-300 transition">↶ Back to the Homepage</a>
+            </div>
+        </form>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

@@ -29,5 +29,5 @@ class Reserve(db.Model):
     date_reserved = db.Column(db.DateTime, nullable=False)
     status = db.Column(db.String(50), nullable=False, default='Pending')
     
-    #user = db.relationship('User', backref=db.backref('reserves', lazy=True))
-    #trip_package = db.relationship('TripPackage', backref=db.backref('reserves', lazy=True))
+    user = db.relationship('User', backref=db.backref('reserves', lazy=True))
+    trip_package = db.relationship('TripPackage', backref=db.backref('reserves', lazy=True))

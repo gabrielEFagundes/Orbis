@@ -1,0 +1,30 @@
+{% block navbase %}
+<nav class="liquid-bg p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <i data-feather="compass" class="w-8 h-8 text-red-400"></i>
+            <span class="text-xl font-bold text-red-100">ORBIS</span>
+        </div>
+        {% if current_user.type == 'worker' %}
+        <div class="hidden md:flex space-x-6 items-center">
+            <a href="#" class="text-red-100 hover:text-red-300 transition">Home</a>
+            <a href="#" class="text-red-100 hover:text-red-300 transition">Reserves</a>
+            <a href="{{ url_for('newPackage') }}" class="text-red-100 hover:text-red-300 transition">New Package</a>
+            <a href="#" class="text-red-100 hover:text-red-300 transition">About</a>
+            <a href="{{ url_for('logout') }}" class="text-red-100 hover:text-red-300 transition bg-red-800 p-2 rounded-lg">Logout</a>
+        </div>
+        {% else %}
+        <div class="hidden md:flex space-x-6 items-center">
+            <a href="#" class="text-red-100 hover:text-red-300 transition">Home</a>
+            <a href="#" class="text-red-100 hover:text-red-300 transition">New Reserve</a>
+            <a href="#" class="text-red-100 hover:text-red-300 transition">Your Reserves</a>
+            <a href="#" class="text-red-100 hover:text-red-300 transition">About</a>
+            <a href="{{ url_for('logout') }}" class="text-red-100 hover:text-red-300 transition bg-red-800 p-2 rounded-lg">Logout</a>
+        </div>
+        {% endif %}
+        <button class="md:hidden text-red-100">
+            <i data-feather="menu"></i>
+        </button>
+    </div>
+</nav>
+{% endblock %}

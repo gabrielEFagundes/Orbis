@@ -10,24 +10,7 @@
     <link rel="stylesheet" href="/app/static/login_style.css">
 </head>
 <body class="min-h-screen bg-gray-900" style="background-image: url('http://static.photos/travel/1200x630/8'); background-size: cover; background-position: center;">
-    <nav class="liquid-bg p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i data-feather="compass" class="w-8 h-8 text-red-400"></i>
-                <span class="text-xl font-bold text-red-100">ORBIS</span>
-            </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#" class="text-red-100 hover:text-red-300 transition">Home</a>
-                <a href="#" class="text-red-100 hover:text-red-300 transition">Destinations</a>
-                <a href="#" class="text-red-100 hover:text-red-300 transition">Packages</a>
-                <a href="#" class="text-red-100 hover:text-red-300 transition">About</a>
-                <a href="login.html" class="text-red-100 hover:text-red-300 transition">Login</a>
-            </div>
-            <button class="md:hidden text-red-100">
-                <i data-feather="menu"></i>
-            </button>
-        </div>
-    </nav>
+    {% include 'nav_base.html' %}
 
     <main class="container mx-auto px-4 py-16">
         <div class="liquid-bg rounded-xl p-8 max-w-3xl mx-auto text-center">
