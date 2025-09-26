@@ -47,6 +47,7 @@ def logout():
     return redirect(url_for('login'))
 
 @app.route('/new/package', methods=['GET', 'POST'])
+@login_required
 def newPackage():
     form = TripPackageForm()
 
@@ -57,5 +58,8 @@ def newPackage():
         
         except Exception:
             raise Exception("There was an error signin your package!")
+        
+    else:
+        print(form.errors)
 
     return render_template('new_package.html', form=form)

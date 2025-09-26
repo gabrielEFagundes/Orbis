@@ -1,5 +1,6 @@
 from app import db, login_manager
 from flask_login import UserMixin
+from datetime import datetime
 
 @login_manager.user_loader
 def load(user_id):
@@ -15,9 +16,9 @@ class User(UserMixin, db.Model):
 class TripPackage(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     destiny = db.Column(db.String(200), nullable=False)
-    period = db.Column(db.String(100), nullable=False)
+    period = db.Column(db.Date, nullable=False)
     price = db.Column(db.Float, nullable=False)
-    isDisponible = db.Column(db.Boolean, default=True)
+    isDisponible = db.Column(db.Boolean, default=True, nullable=False)
     category = db.Column(db.String(100), nullable=False)
     vacancies = db.Column(db.Integer, nullable=False)
     responsable = db.Column(db.String(150), nullable=False)

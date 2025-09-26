@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, SelectField, FloatField, IntegerField
+from wtforms import StringField, PasswordField, SubmitField, SelectField, FloatField, IntegerField, DateField
 from wtforms.validators import DataRequired, Email, Length, EqualTo, NumberRange
 from app import bcrypt, db
 from app.models import User, TripPackage, Reserve
@@ -46,7 +46,7 @@ class UserSignin(FlaskForm):
     
 class TripPackageForm(FlaskForm):
     destiny = StringField('Destiny', validators=[DataRequired()])
-    period = IntegerField('Duration (Days)', validators=[DataRequired(), NumberRange(min=1)])
+    period = DateField('Duration (Days)', validators=[DataRequired()])
     price = FloatField('Price', validators=[DataRequired(), NumberRange(min=0)])
     category = StringField('Category', validators=[DataRequired()])
     vacancies = IntegerField('Vacancies', validators=[DataRequired(), NumberRange(min=1)])
@@ -56,7 +56,7 @@ class TripPackageForm(FlaskForm):
     def save(self):
         package = TripPackage(
             destiny=self.destiny.data,
-            period=str(self.period.data),
+            period=self.period.data,
             price=self.price.data,
             category=self.category.data,
             vacancies=self.vacancies.data,
