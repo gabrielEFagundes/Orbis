@@ -3,6 +3,7 @@ from wtforms import StringField, PasswordField, SubmitField, SelectField, FloatF
 from wtforms.validators import DataRequired, Email, Length, EqualTo, NumberRange
 from app import bcrypt, db
 from app.models import User, TripPackage, Reserve
+from flask_login import current_user
 
 class UserLogin(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -67,3 +68,23 @@ class TripPackageForm(FlaskForm):
         db.session.commit()
 
         return package
+    
+class ReserveForm(FlaskForm):
+    user_id = IntegerField('User ID', validators=[DataRequired()])
+    trip_package_id = IntegerField('Trip ID', validators=[DataRequired()])
+    submit = SubmitField('Create Reserve')
+    
+    def save(self):
+        reserve = Reserve(
+            user_id = self.user_id.data,
+            trip_package_id = self.trip_package_id.data
+        )
+
+        db.session.add(reserve)
+        db.session.commit()
+
+        return reserve
+    
+    def updateStatus(id):
+        Reserve.query.filter(Reserve.id == id).update({Reserve.status: "Confirmed"})
+        db.session.commit()

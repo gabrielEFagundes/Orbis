@@ -19,10 +19,11 @@
 
         <form class="space-y-6" method="POST">
             {{ form.csrf_token }}
+            <sub class="text-white">Your id: {{ current_user.id }}</sub>
             <div>
-                {{ form.destiny.label(class="block text-sm font-medium text-red-100") }}
+                {{ form.user_id.label(class="block text-sm font-medium text-red-100") }}
                 <div class="mt-1 relative">
-                    {{ form.destiny(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
+                    {{ form.user_id(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
                     <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                         <i data-feather="mail" class="h-5 w-5 text-red-300"></i>
                     </div>
@@ -30,49 +31,9 @@
             </div>
 
             <div>
-                {{ form.period.label(class="block text-sm font-medium text-red-100") }}
+                {{ form.trip_package_id.label(class="block text-sm font-medium text-red-100") }}
                 <div class="mt-1 relative">
-                    {{ form.period(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
-                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                        <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                {{ form.price.label(class="block text-sm font-medium text-red-100") }}
-                <div class="mt-1 relative">
-                    {{ form.price(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
-                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                        <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                {{ form.category.label(class="block text-sm font-medium text-red-100") }}
-                <div class="mt-1 relative">
-                    {{ form.category(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
-                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                        <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                {{ form.vacancies.label(class="block text-sm font-medium text-red-100") }}
-                <div class="mt-1 relative">
-                    {{ form.vacancies(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
-                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                        <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                {{ form.responsable.label(class="block text-sm font-medium text-red-100") }}
-                <div class="mt-1 relative">
-                    {{ form.responsable(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
+                    {{ form.trip_package_id(class="input-focus liquid-border w-full px-4 py-3 bg-gray-800 bg-opacity-50 text-red-100 rounded-lg focus:outline-none transition duration-200") }}
                     <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                         <i data-feather="lock" class="h-5 w-5 text-red-300"></i>
                     </div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbis | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="/app/static/login_style.css">
+</head>
+<body class="min-h-screen bg-gray-900" style="background-image: url('http://static.photos/travel/1200x630/8'); background-size: cover; background-position: center;">
+    {% include 'nav_base.html' %}
+
+    <main class="container mx-auto px-4 py-16">
+        <div class="liquid-bg rounded-xl p-8 max-w-3xl mx-auto text-center">
+            <h1 class="text-4xl md:text-4xl font-bold text-red-100 mb-6"><b class="text-red-500">X </b>Couldn't complete your requisition!</h1>
+            <a href="{{ url_for('viewReserves') }}" class="text-md text-red-200 mb-8">↶ Go back to your reserves</a>
+        </div>
+    </main>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
